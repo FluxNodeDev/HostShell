@@ -52,16 +52,18 @@ npm run dist:setup   # 安装包 → release/HostShell-<version>-setup.exe（NSI
 
 | 产物 | 说明 |
 |---|---|
-| `release/win-unpacked/` | 免安装目录版（232 MB），双击 `HostShell.exe` 直接运行 |
-| `release/HostShell-0.17.1-win.zip` | 绿色版压缩包 **约 97 MB**，解压即用 |
-| `release/HostShell-0.17.1-setup.exe` | 安装包 **约 72 MB**：Program Files 安装、快捷方式、控制面板卸载项 |
-| `release/HostShell-0.17.1.AppImage` | Linux 免安装包 **约 74 MB**（CI 构建） |
-| `release/hostshell_0.17.1_amd64.deb` | Debian/Ubuntu 安装包 **约 74 MB**（CI 构建） |
+| `release/win-unpacked/` | Windows 免安装目录（232 MB），双击 `HostShell.exe` 直接运行 |
+| `release/HostShell-0.17.3-setup.exe` | Windows 安装包 **约 72 MB**：Program Files 安装、快捷方式、控制面板卸载项 |
+| `release/HostShell-0.17.3-win.zip` | Windows 绿色版 **约 98 MB** |
+| `release/HostShell-0.17.3.dmg` | macOS（Intel）安装镜像 **约 82 MB**（未签名，CI 构建） |
+| `release/HostShell-0.17.3-arm64.dmg` | macOS（Apple Silicon）安装镜像 **约 79 MB**（未签名，CI 构建） |
+| `release/HostShell-0.17.3.AppImage` | Linux 免安装包 **约 74 MB**（CI 构建） |
+| `release/hostshell_0.17.3_amd64.deb` | Debian/Ubuntu 安装包 **约 74 MB**（CI 构建） |
 
 安装包由 `build/installer.nsi` 编译（NSIS 3.04），静默安装/卸载已实测：
 
 ```powershell
-release\HostShell-0.17.1-setup.exe /S /D=C:\path\to\install
+release\HostShell-0.17.3-setup.exe /S /D=C:\path\to\install
 ```
 
 > 首次构建安装包需要 NSIS：下载 `nsis-3.0.4.1.7z`（electron-builder-binaries），
@@ -70,6 +72,23 @@ release\HostShell-0.17.1-setup.exe /S /D=C:\path\to\install
 CI：推送到 `main` 自动跑类型检查与构建（`.github/workflows/ci.yml`）；
 推送 `v*` tag 自动构建 ZIP + 安装包并上传到 GitHub Release（`.github/workflows/release.yml`）；
 Linux 包（AppImage / deb）由 `.github/workflows/linux.yml` 在 ubuntu 上构建，可手动触发。
+
+### macOS
+
+从 Release 下载对应的 dmg，拖入「应用程序」即可：
+
+- Intel：`HostShell-<version>.dmg`
+- Apple Silicon：`HostShell-<version>-arm64.dmg`
+- 压缩版：`HostShell-<version>-mac.zip` / `HostShell-<version>-arm64-mac.zip`
+
+包**未做 Apple 签名与公证**，首次打开 macOS 会拦截。任选其一：
+
+```bash
+# 右键点击 App → 打开；或
+xattr -dr com.apple.quarantine /Applications/HostShell.app
+```
+
+macOS 下同样没有 RDP（`mstsc` 仅 Windows）；开机自启走系统登录项（Electron `setLoginItemSettings`）。
 
 ### Linux
 
