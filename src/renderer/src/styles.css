@@ -2367,8 +2367,9 @@ body {
   text-align: center;
 }
 .sponsor-qr img {
-  width: 132px;
-  height: auto;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
   border: 1px solid var(--border);
   border-radius: 8px;
   background: #fff;

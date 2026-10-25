@@ -113,7 +113,7 @@ HostShell is MIT open source — no licenses, no "pro" edition. If it helps you,
 
 | Alipay | WeChat Pay |
 |---|---|
-| ![Alipay](docs/sponsor/alipay.jpg) | ![WeChat Pay](docs/sponsor/wechat.jpg) |
+| <img src="docs/sponsor/alipay-qr.png" width="220" alt="Alipay" /> | <img src="docs/sponsor/wechat-qr.png" width="220" alt="WeChat Pay" /> |
 
 Sponsorship is entirely optional and unlocks nothing. Issues and pull requests are equally welcome.
 

@@ -52,7 +52,7 @@ HostShell は MIT のオープンソースです。ライセンス販売や「�
 
 | Alipay | WeChat Pay |
 |---|---|
-| ![Alipay](../sponsor/alipay.jpg) | ![WeChat Pay](../sponsor/wechat.jpg) |
+| <img src="../sponsor/alipay-qr.png" width="200" alt="Alipay" /> | <img src="../sponsor/wechat-qr.png" width="200" alt="WeChat Pay" /> |
 
 スポンサーは任意で、機能に影響しません。Issue / PR も歓迎します。
 

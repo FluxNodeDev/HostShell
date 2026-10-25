@@ -53,17 +53,17 @@ npm run dist:setup   # 安装包 → release/HostShell-<version>-setup.exe（NSI
 | 产物 | 说明 |
 |---|---|
 | `release/win-unpacked/` | Windows 免安装目录（232 MB），双击 `HostShell.exe` 直接运行 |
-| `release/HostShell-0.17.3-setup.exe` | Windows 安装包 **约 72 MB**：Program Files 安装、快捷方式、控制面板卸载项 |
-| `release/HostShell-0.17.3-win.zip` | Windows 绿色版 **约 98 MB** |
-| `release/HostShell-0.17.3.dmg` | macOS（Intel）安装镜像 **约 82 MB**（未签名，CI 构建） |
-| `release/HostShell-0.17.3-arm64.dmg` | macOS（Apple Silicon）安装镜像 **约 79 MB**（未签名，CI 构建） |
-| `release/HostShell-0.17.3.AppImage` | Linux 免安装包 **约 74 MB**（CI 构建） |
-| `release/hostshell_0.17.3_amd64.deb` | Debian/Ubuntu 安装包 **约 74 MB**（CI 构建） |
+| `release/HostShell-0.17.4-setup.exe` | Windows 安装包 **约 72 MB**：Program Files 安装、快捷方式、控制面板卸载项 |
+| `release/HostShell-0.17.4-win.zip` | Windows 绿色版 **约 98 MB** |
+| `release/HostShell-0.17.4.dmg` | macOS（Intel）安装镜像 **约 82 MB**（未签名，CI 构建） |
+| `release/HostShell-0.17.4-arm64.dmg` | macOS（Apple Silicon）安装镜像 **约 79 MB**（未签名，CI 构建） |
+| `release/HostShell-0.17.4.AppImage` | Linux 免安装包 **约 74 MB**（CI 构建） |
+| `release/hostshell_0.17.4_amd64.deb` | Debian/Ubuntu 安装包 **约 74 MB**（CI 构建） |
 
 安装包由 `build/installer.nsi` 编译（NSIS 3.04），静默安装/卸载已实测：
 
 ```powershell
-release\HostShell-0.17.3-setup.exe /S /D=C:\path\to\install
+release\HostShell-0.17.4-setup.exe /S /D=C:\path\to\install
 ```
 
 > 首次构建安装包需要 NSIS：下载 `nsis-3.0.4.1.7z`（electron-builder-binaries），
@@ -160,7 +160,7 @@ HostShell 是 MIT 开源项目，不卖授权、没有"升级"版本。如果它
 
 | 支付宝 | 微信支付 |
 |---|---|
-| ![支付宝](docs/sponsor/alipay.jpg) | ![微信支付](docs/sponsor/wechat.jpg) |
+| <img src="docs/sponsor/alipay-qr.png" width="220" alt="Alipay" /> | <img src="docs/sponsor/wechat-qr.png" width="220" alt="WeChat Pay" /> |
 
 赞助完全自愿，不影响任何功能；也欢迎用 Issue / PR 的方式参与。
 

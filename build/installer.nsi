@@ -9,7 +9,7 @@ Unicode true
 !define APP_NAME "HostShell"
 ; 版本号默认与 package.json 同步，可用 /DAPP_VERSION=x.y.z 覆盖
 !ifndef APP_VERSION
-  !define APP_VERSION "0.17.3"
+  !define APP_VERSION "0.17.4"
 !endif
 !define APP_PUBLISHER "HostShell"
 !define APP_EXE "HostShell.exe"
