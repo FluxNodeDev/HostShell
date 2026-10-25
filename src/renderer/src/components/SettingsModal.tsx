@@ -360,7 +360,7 @@ export function SettingsModal(): JSX.Element {
               <div style={{ lineHeight: 2, color: '#555' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
                   <Icon name="terminal" style={{ fontSize: 22, color: '#5b8fbe' }} />
-                  <b style={{ fontSize: 15, color: '#333' }}>HostShell 0.17.2</b>
+                  <b style={{ fontSize: 15, color: '#333' }}>HostShell 0.17.3</b>
                 </div>
                 <div>一体化服务器管理工具：SSH 终端、SFTP、实时监控、隧道与 Zmodem。</div>
                 <div>技术栈：Electron + React + TypeScript + xterm.js + ssh2</div>

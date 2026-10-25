@@ -131,7 +131,7 @@ jobs:
         run: npx electron-vite build
 
       - name: Package dmg + zip (universal, unsigned)
-        run: npx electron-builder --mac --universal --publish never
+        run: npx electron-builder --mac --publish never
 
       - name: Publish macOS assets
         uses: softprops/action-gh-release@v2

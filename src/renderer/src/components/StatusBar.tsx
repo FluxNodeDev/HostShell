@@ -19,7 +19,7 @@ export function StatusBar(): JSX.Element {
     <div className="statusbar">
       <div className="left">
         <span className="link">{t('status.opensource')}</span>
-        <span>HostShell 0.17.2</span>
+        <span>HostShell 0.17.3</span>
         <span>{t('status.workbench')}</span>
       </div>
       <div className="right">

@@ -24,7 +24,7 @@ jobs:
         run: npx electron-vite build
 
       - name: Package dmg + zip (universal)
-        run: npx electron-builder --mac --universal --publish never
+        run: npx electron-builder --mac --publish never
 
       - name: List artifacts
         run: ls -lh release/

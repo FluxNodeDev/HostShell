@@ -1,6 +1,6 @@
 {
   "name": "hostshell",
-  "version": "0.17.2",
+  "version": "0.17.3",
   "productName": "HostShell",
   "description": "HostShell - 一体化服务器管理工具",
   "main": "./out/main/index.js",
@@ -44,13 +44,15 @@
         {
           "target": "dmg",
           "arch": [
-            "universal"
+            "x64",
+            "arm64"
           ]
         },
         {
           "target": "zip",
           "arch": [
-            "universal"
+            "x64",
+            "arm64"
           ]
         }
       ],
