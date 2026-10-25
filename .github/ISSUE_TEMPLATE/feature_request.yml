@@ -1,0 +1,39 @@
+name: Feature request
+description: 提出一个功能建议或改进
+title: '[feat] '
+labels: ['enhancement']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        建议先在 [Discussions](https://github.com/FluxNodeDev/HostShell/discussions) 里聊聊，避免重复。
+  - type: textarea
+    id: problem
+    attributes:
+      label: 你遇到的场景 / 痛点
+      description: 描述真实使用场景，比"希望增加 X 功能"更有帮助
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 你希望的解决方案
+    validations:
+      required: false
+  - type: dropdown
+    id: area
+    attributes:
+      label: 涉及模块
+      options:
+        - 终端 / SSH
+        - SFTP
+        - 监控 / 进程
+        - 连接管理
+        - 隧道 / 代理 / RDP
+        - 数据库（Redis / SQL，规划中）
+        - AI 助手（规划中）
+        - 界面 / 国际化
+        - 打包 / 安装
+        - 其他
+    validations:
+      required: true

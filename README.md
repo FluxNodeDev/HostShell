@@ -1,8 +1,28 @@
 # HostShell
 
+[![Release](https://img.shields.io/github/v/release/FluxNodeDev/HostShell?color=0d9488)](https://github.com/FluxNodeDev/HostShell/releases)
+[![License](https://img.shields.io/github/license/FluxNodeDev/HostShell?color=0d9488)](LICENSE)
+[![CI](https://github.com/FluxNodeDev/HostShell/actions/workflows/ci.yml/badge.svg)](https://github.com/FluxNodeDev/HostShell/actions/workflows/ci.yml)
+[![Downloads](https://img.shields.io/github/downloads/FluxNodeDev/HostShell/total?color=0d9488)](https://github.com/FluxNodeDev/HostShell/releases)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-0d9488)](#下载)
+[![Stars](https://img.shields.io/github/stars/FluxNodeDev/HostShell?style=social)](https://github.com/FluxNodeDev/HostShell/stargazers)
+
 **中文** · [English](README.en.md) · [日本語](docs/i18n/README.ja.md) · [한국어](docs/i18n/README.ko.md) · [Deutsch](docs/i18n/README.de.md) · [Français](docs/i18n/README.fr.md) · [Español](docs/i18n/README.es.md) · [Русский](docs/i18n/README.ru.md) · [Português](docs/i18n/README.pt-BR.md)
 
-一体化服务器管理工具：SSH 终端、SFTP 文件管理、实时监控、隧道、Zmodem，装进同一个窗口。
+**把 SSH、SFTP、实时监控、隧道、Zmodem 合成一个窗口的服务器工作台。**
+免登录、免云同步，连接配置只存在本机。
+
+> 开源（MIT）、本地优先。界面采用左侧图标导航 + 卡片式终端的模块化布局，
+> 后续会以同一套框架接入 Redis / SQL 管理与 AI 辅助能力。
+
+## 为什么是 HostShell
+
+- **不用在四个工具之间切换**：终端、文件面板、监控、隧道同屏，`cd` 之后文件面板自动跟随
+- **不用装 agent 也能看监控**：CPU / 内存 / 磁盘 / 网卡 / 进程全部来自 `/proc`，一次 `exec` 采集完
+- **不登录、不上传**：没有账号体系，配置和密码只在本机（`safeStorage` 加密）
+- **三平台、九种语言**：Windows 安装包 / macOS dmg / Linux AppImage & deb
+- **小而快**：Windows 安装包 72 MB，冷启动不到 1 秒
+- **MIT，没有 pro 版**：没有激活、没有付费墙、没有遥测
 
 > 开源（MIT）、本地优先。界面采用左侧图标导航 + 卡片式终端的模块化布局，
 > 后续会以同一套框架接入 Redis / SQL 管理与 AI 辅助能力。
@@ -149,10 +169,36 @@ docs/          01 功能清单、02 架构设计、03 验收报告、shots/ 截�
 
 Electron 33 · React 18 · TypeScript · electron-vite · xterm.js 5 · ssh2 · CodeMirror 6 · zustand · FontAwesome
 
+## 下载
+
+| 平台 | 文件 | 说明 |
+|---|---|---|
+| Windows | `HostShell-<version>-setup.exe` | 安装版，带快捷方式与卸载项 |
+| Windows | `HostShell-<version>-win.zip` | 绿色版，解压即用 |
+| macOS | `HostShell-<version>-arm64.dmg` | Apple Silicon |
+| macOS | `HostShell-<version>.dmg` | Intel |
+| Linux | `HostShell-<version>.AppImage` | 免安装，`chmod +x` 后运行 |
+| Linux | `hostshell_<version>_amd64.deb` | Debian / Ubuntu |
+
+全部产物在 [Releases](https://github.com/FluxNodeDev/HostShell/releases) 页面，由 GitHub Actions 在三平台 runner 上构建。
+
 ## 文档
 
 - [02 架构设计](docs/02-架构设计.md)
 - [03 验收报告](docs/03-验收报告.md)
+- [Roadmap](ROADMAP.md)
+- [参与贡献](CONTRIBUTING.md)
+
+## 参与
+
+- 有想法或使用问题：[Discussions](https://github.com/FluxNodeDev/HostShell/discussions)
+- 发现 bug：[提交 issue](https://github.com/FluxNodeDev/HostShell/issues/new?template=bug_report.yml)
+- 想加功能：[功能建议](https://github.com/FluxNodeDev/HostShell/issues/new?template=feature_request.yml)
+- 代码/文档/翻译 PR 都欢迎，见 [CONTRIBUTING](CONTRIBUTING.md)
+
+如果这个项目对你有用，**点个 Star** 是最实在的支持：
+
+[![Star History Chart](https://api.star-history.com/svg?repos=FluxNodeDev/HostShell&type=Date)](https://star-history.com/#FluxNodeDev/HostShell&Date)
 
 ## 赞助
 

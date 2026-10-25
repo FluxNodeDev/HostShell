@@ -1,8 +1,24 @@
 # HostShell
 
+[![Release](https://img.shields.io/github/v/release/FluxNodeDev/HostShell?color=0d9488)](https://github.com/FluxNodeDev/HostShell/releases)
+[![License](https://img.shields.io/github/license/FluxNodeDev/HostShell?color=0d9488)](LICENSE)
+[![CI](https://github.com/FluxNodeDev/HostShell/actions/workflows/ci.yml/badge.svg)](https://github.com/FluxNodeDev/HostShell/actions/workflows/ci.yml)
+[![Downloads](https://img.shields.io/github/downloads/FluxNodeDev/HostShell/total?color=0d9488)](https://github.com/FluxNodeDev/HostShell/releases)
+[![Stars](https://img.shields.io/github/stars/FluxNodeDev/HostShell?style=social)](https://github.com/FluxNodeDev/HostShell/stargazers)
+
 [中文](README.md) · **English** · [日本語](docs/i18n/README.ja.md) · [한국어](docs/i18n/README.ko.md) · [Deutsch](docs/i18n/README.de.md) · [Français](docs/i18n/README.fr.md) · [Español](docs/i18n/README.es.md) · [Русский](docs/i18n/README.ru.md) · [Português](docs/i18n/README.pt-BR.md)
 
 An all-in-one server workbench: SSH terminal, SFTP file manager, live metrics, tunnels and Zmodem — in a single window.
+No account, no cloud sync: connection configs stay on your machine.
+
+## Why HostShell
+
+- **Stop switching between four tools** — terminal, file panel, metrics and tunnels live in one window; the SFTP panel follows your `cd`
+- **Agent-free metrics** — CPU / memory / disk / network / processes collected from `/proc` in a single `exec`
+- **Local-first** — no account system, no upload; passwords encrypted with the OS keychain via `safeStorage`
+- **Three platforms, nine languages** — Windows installer, macOS dmg, Linux AppImage & deb
+- **Small and fast** — 72 MB installer, under a second cold start
+- **MIT, no pro edition** — no activation, no paywall, no telemetry
 
 > Open source (MIT), local-first. The UI uses a left icon rail with a card-style terminal, so modules such as Redis / SQL management and AI assistance can be added to the same shell later.
 
@@ -106,6 +122,17 @@ Electron 33 · React 18 · TypeScript · electron-vite · xterm.js 5 · ssh2 · 
 - [Architecture](docs/02-架构设计.md) (Chinese)
 - [Acceptance report](docs/03-验收报告.md) (Chinese)
 - Localized READMEs: [日本語](docs/i18n/README.ja.md) · [한국어](docs/i18n/README.ko.md) · [Deutsch](docs/i18n/README.de.md) · [Français](docs/i18n/README.fr.md) · [Español](docs/i18n/README.es.md) · [Русский](docs/i18n/README.ru.md) · [Português](docs/i18n/README.pt-BR.md)
+
+## Community
+
+- Questions and ideas: [Discussions](https://github.com/FluxNodeDev/HostShell/discussions)
+- Bugs: [issue](https://github.com/FluxNodeDev/HostShell/issues/new?template=bug_report.yml)
+- Feature requests: [feature request](https://github.com/FluxNodeDev/HostShell/issues/new?template=feature_request.yml)
+- PRs (code / docs / translations) are welcome — see [CONTRIBUTING](CONTRIBUTING.md)
+
+A **star** is the most direct support:
+
+[![Star History Chart](https://api.star-history.com/svg?repos=FluxNodeDev/HostShell&type=Date)](https://star-history.com/#FluxNodeDev/HostShell&Date)
 
 ## Sponsor
 
