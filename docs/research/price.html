@@ -1,0 +1,315 @@
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="说明:高级版/专业版永久有效,开通同步服务前须先升级到高级版或专业版.升级永久高级版+一年同步服务推荐79元购买链接:www.hostbuf.com/manage/pay_gjsyncpack1.jsp升级永久高级版(无同步):35元购买链接:www.hostbuf.com/manage/pay_advanced.jsp升级永久专业版+一年同步服务推荐168元购买链接:www.hostbuf.com/manage/pay_pfsyncpack1.jsp升级永久专业版(无同步):128元购买链接:www.hostbuf.com/manage/pay_pf.jsp(从高级版升级到专业版自动减35元)开通一年同步服务:49元购买链接:www.hostbuf.com/manage/pay_sync.jsp云端同步介绍云端同步可在不同设备间同步各种配置信息,内容包括主机连接配置,代理服务器,秘钥,命令历史,文件路径历史,快捷命令,命令参数历史.同步过程自动完成,间隔30秒尝试同步一次.安全性:1.数据在本机使用同步密码加密后才会上传到同步服务器,没有同步密码,任何一方都无法获得同步内容.2.同步密码只在本机加密保存.3.加密算法采用AES256,HMAC-SHA256,以及多重加密混淆,避免破解泄露风险.专业版功能介绍高级版功能主要靠调用系统自带命令实现,无需额外安装软件,不会对系统进行改动" />
+<title>升级高级版/专业版/开通云端同步 - FinalShell官网</title>
+	
+	<link rel="stylesheet" href="https://www.hostbuf.com:443//ui/font-awesome-4.5.0/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="https://www.hostbuf.com:443//ui/base/theme.css" />
+	
+	<script type="text/javascript"   src="../ui/ueditor/third-party/SyntaxHighlighter/shCore.js"   charset="utf-8" ></script>
+    <link href="../ui/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css"  rel="stylesheet"  type="text/css" />
+    
+<script type="text/javascript">
+
+function replyto(userId){
+	var message="@"+userId+"  ";
+	 UE.getEditor('editor').execCommand('insertHtml',message );
+}
+
+function setDisabled() {
+    UE.getEditor('editor').setDisabled('fullscreen');
+    disableBtn("enable");
+}
+
+function init(){
+		var initContent='';
+		if(false){
+			initContent='<p style="color:#555;line-height: 6em; text-align: center;font-size: 13px;margin-top: 15px;"><a style="color:#104E8B;text-decoration: none;" target="_top" href="https://www.hostbuf.com:443/login">登录</a> 后回复,<a style="color:#104E8B;text-decoration: none;" target="_top" href="https://www.hostbuf.com:443/register">立即注册</a><br/></p>';
+		}
+	  var ue = UE.getEditor('editor', {
+		    enableContextMenu: false,
+		    elementPathEnabled: false, 
+		    wordCount: false,
+		    autosave:false,
+		    initialFrameHeight:90, 
+		    wordCountMsg: '{#count}/10000',
+           readonly:false,
+			initialContent:initContent,
+		    toolbars: [
+		               ['fontfamily','fontsize','link', 'unlink','horizontal','removeformat','pasteplain','source'],
+		               ['bold','italic','underline','forecolor','backcolor','emotion','simpleupload','insertimage','scrawl','insertcode','insertvideo','attachment','preview','fullscreen']
+		    ]
+       });
+}
+	  
+
+function initasyn(){ 
+  setTimeout(function () {
+	  init();
+}, 0);
+}
+
+function updateRight(){
+	var rs=document.getElementById("rightside");
+	var cp=document.getElementById("contentpanel");
+	var rsX=cp.offsetLeft+cp.offsetWidth;
+	var rsWidth=cp.offsetWidth*0.3;
+	var ptop=document.documentElement.scrollTop;
+	if(ptop==0){
+		ptop=document.body.scrollTop;
+	}
+	if(ptop>30){
+		rs.style.top =20+"px";
+		
+	}else{
+		rs.style.top =10+cp.offsetTop+ 'px';
+	}
+	rs.style.left = 15+rsX+'px';
+	rs.style.width = rsWidth+'px';
+}
+
+
+function getElementTop(element){
+var actualTop = element.offsetTop;
+var current = element.offsetParent;
+while (current !== null){
+actualTop += current.offsetTop;
+current = current.offsetParent;
+}
+
+return actualTop;
+}
+
+function isIE() { //ie?
+    if (!!window.ActiveXObject || "ActiveXObject" in window)
+      return true;
+    else
+      return false;
+  }
+
+function scrollinit(){
+	gotoreply(window.location);
+	if(!isIE()){
+		setTimeout(function(){gotoreply(window.location);}, 0); 
+	}else{
+		for(var i=1;i<5;i++){
+			setTimeout(function(){gotoreply(window.location);}, i*100);  
+		}
+	}
+
+}
+
+function gotoreply(url){
+	var id=url.hash
+	if(id!=""){
+		id=id.substr(1);
+		if(id!=""){
+			var ri=document.getElementById(id);
+			ri.style.backgroundColor="#FFF8DC";  
+			
+			var scrollY=getElementTop(ri)-200; 
+			window.scroll(0,scrollY);
+			setTimeout(function(){ri.style.backgroundColor='#FFF';}, 2000); 
+		}
+	}
+}
+
+
+window.onresize=updateRight;
+window.onscroll=document.onscroll=updateRight;  
+
+</script> 
+
+</head>
+
+<body onload="initasyn();updateRight();scrollinit();" >
+
+	
+
+
+
+
+
+<div class="top">
+	<div class="top-content td0">
+		<table>
+			<tr>
+				<td style="width: 100%;">
+<div class="catalog-nav">
+			
+			<a class="top-logo" href="https://www.hostbuf.com:443/">HOSTBUF</a>
+			
+			<a class="catalog-item"    style="font-size: 12px;padding-top: 12px;padding-bottom: 12px;" href="https://www.hostbuf.com:443/c/131.html">FinalShell</a>
+			 
+		</div> 
+				</td>
+				
+				
+			</tr>
+
+		</table>
+		
+		<div class="catalog-right">
+		
+		
+			
+			
+			<a href="https://www.hostbuf.com:443/register">注册</a>&nbsp;&nbsp; 
+			<a href="https://www.hostbuf.com:443/login"><i class="fa fa-lock font16">&nbsp;&nbsp;</i>登录</a> 
+			
+		</div>
+		
+	</div>
+	
+</div>
+
+
+
+
+ 
+
+	<div class="wrap">
+			<div class="content">
+			
+			
+						
+				<div class="main">
+					<div class="mainpanel">
+							<div id="rightside" class="rightsidebar tablestyle">
+								<table class="td0">
+									<tr class="tabletr">
+										<td colspan="2">
+											<div class="simple-table-head-wrap ">
+											<span class="cb-item selected simple" ><i class="fa fa-commenting-o  fa-font16 simple-list-item-head-top" ></i>最新回复</span>
+											</div>
+										</td>
+										<!--<td class="td-reply-count"><span class="table-head-item">  </span></td>-->
+									</tr>
+									
+									
+								</table>
+								
+							</div>
+	
+	
+												
+						<div id="contentpanel" class="tv-wrap">
+							<div class="tv-main">
+								<div class="tv-main-top">
+									<table class="td0">
+										<tr style="background: rgb(255, 255, 255) none repeat scroll 0% 0%;">
+											
+											<td valign="top">
+												<div class="tv-main-head-wrap">
+													<!--<video style="border-radius: 3px;" height="100" autoplay loop muted> 
+														<source src="head.mp4" type="video/mp4" />
+													</video>-->
+													<a href="https://www.hostbuf.com:443/user/wntr.html"><img class="tv-main-head" src="https://www.hostbuf.com:443/profileimages/VokRaU.jpg"/></a>
+												</div>
+											</td>
+											
+											<td width="100%" valign="center"  > 
+											
+												<div style="" >
+													<div class="tv-main-title">
+													<span >升级高级版/专业版/开通云端同步</span>
+													</div>
+												<div class="tv-main-info">
+												
+															<a class="tv-main-info-author" href="https://www.hostbuf.com:443/user/wntr.html">wntr</a>
+												
+													<span class="tv-main-info-other">2017-09-24 06:45&nbsp;&nbsp;107月前&nbsp;&nbsp;2275449&nbsp;阅读&nbsp;0&nbsp;回复</span>
+													<a class="tv-main-info-catalog" href="https://www.hostbuf.com:443/c/131.html">FinalShell</a>
+													
+												</div>
+												</div>
+											</td>
+											
+										</tr>
+										<tr>
+											
+											<td></td>
+											
+											<td >
+												<div class="tv-main-content" >
+													
+													
+													<p>说明: 高级版/专业版永久有效,开通同步服务前须先升级到高级版或专业版.<br/></p><p><br/>升级永久高级版+一年同步服务<span style="color: rgb(255, 0, 0);"> 推荐</span><br/>79元 购买链接:&nbsp; <a href="http://www.hostbuf.com/manage/pay_gjsyncpack1.jsp" target="_blank" textvalue="www.hostbuf.com/manage/pay_gjsyncpack1.jsp" style="text-decoration: underline; background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">www.hostbuf.com/manage/pay_gjsyncpack1.jsp</span></a><br/></p><p><br/>升级永久高级版(无同步):<br/>35元 购买链接:&nbsp; <a href="http://www.hostbuf.com/manage/pay_advanced.jsp" target="_blank" style="background-color: rgb(255, 255, 0); text-decoration: underline;"><span style="text-decoration: underline; background-color: rgb(255, 255, 255);">www.hostbuf.com/manage/pay_advanced.jsp</span></a><a href="http://www.hostbuf.com/manage/pay_advanced.jsp" target="_blank" style="background-color: rgb(255, 255, 0); text-decoration: underline;"><span style="background-color: rgb(255, 255, 0);"></span></a><br/></p><p><br/></p><hr/><p>升级永久专业版+一年同步服务 <span style="color: rgb(255, 0, 0);">推荐</span><br/>168元 购买链接:&nbsp; <a href="/manage/pay_pfsyncpack1.jsp" target="_blank" textvalue="www.hostbuf.com/manage/pay_pfsyncpack1.jsp">www.hostbuf.com/manage/pay_pfsyncpack1.jsp</a><br/><br/>升级永久专业版(无同步):<br/>128元 购买链接:&nbsp; <a href="/manage/pay_pf.jsp" target="_blank" textvalue="www.hostbuf.com/manage/pay_pf.jsp">www.hostbuf.com/manage/pay_pf.jsp</a><br/><br/>(从高级版升级到专业版自动减35元)<br/></p><hr/><p>开通一年同步服务:<br/>49元 购买链接: <a href="/manage/pay_sync.jsp" target="_blank" textvalue="www.hostbuf.com/manage/pay_sync.jsp"><span style="background-color: rgb(255, 255, 255);">www.hostbuf.com/manage/pay_sync.jsp</span></a><br/><a href="/manage/pay_advanced.jsp" target="_blank" textvalue="www.hostbuf.com/manage/pay_advanced.jsp" style="background-color: rgb(255, 255, 0); text-decoration: underline;"><span style="background-color: rgb(255, 255, 0);"></span></a><br/></p><a href="/manage/pay_advanced.jsp" target="_blank" textvalue="www.hostbuf.com/manage/pay_advanced.jsp" style="background-color: rgb(255, 255, 0); text-decoration: underline;"><span style="background-color: rgb(255, 255, 0);"></span></a><hr/><h1>云端同步介绍<br/></h1>云端同步可在不同设备间同步各种配置信息,内容包括主机连接配置,代理服务器,秘钥,命令历史,文件路径历史,快捷命令,命令参数历史.<br/>同步过程自动完成,间隔30秒尝试同步一次.<br/><br/>安全性:<br/>1.数据在本机使用同步密码加密后才会上传到同步服务器,没有同步密码,任何一方都无法获得同步内容.<br/>2.同步密码只在本机加密保存.<br/>3.加密算法采用AES256,HMAC-SHA256,以及多重加密混淆,避免破解泄露风险.<br/><br/><h1>专业版功能介绍<br/></h1>高级版功能主要靠调用系统自带命令实现,无需额外安装软件,不会对系统进行改动,支持大部分常见系统.<br/><br/><strong>当前专业版功能: </strong><br/>1.所有高级版功能<br/>2.设置任意本机图片为终端背景<br/><img src="/upload/image/20210107/1609993558507015851.jpg" title="1609993558507015851.jpg" alt="QQ截图20210107122533.jpg" style="width: 671px; height: 458px;" width="671" height="458"/><br/><br/>3.查看服务器系统信息<br/><img src="/upload/image/20210107/1609993182508062266.jpg" title="1609993182508062266.jpg" alt="QQ截图20210107121929.jpg" style="width: 620px; height: 451px;" width="620" height="451"/><br/><br/>4.快速输入路径功能,可在窗口显示并选择系统的目录和文件(终端命令输入框)<img src="/upload/image/20240813/1723505878477030348.png" title="1723505878477030348.png" alt="Snipaste_2024-08-13_07-37-45.png" style="width: 694px; height: 409px;" width="694" height="409"/><br/><br/>5.历史命令左右键选择字段输入功能(命令输入框)<br/><img src="/upload/image/20240813/1723520238339014395.png" title="1723520238339014395.png" alt="Snipaste_2024-08-13_11-36-25.png" style="width: 523px; height: 390px;" width="523" height="390"/><br/><br/>6.快速输入命令名称功能(命令输入框)<br/><img src="/upload/image/20240826/1724643308483074977.png" title="1724643308483074977.png" alt="Snipaste_2024-08-26_11-34-57.png" style="width: 397px; height: 267px;" width="397" height="267"/><br/><p><br/></p>7.不断增加中<h1>高级版功能介绍<br/></h1><p><br/></p>高级版功能主要靠调用系统自带命令实现,无需额外安装软件,不会对系统进行改动,支持大部分常见系统.<br/><br/><strong>当前高级版功能: </strong><br/><p>1.网络监控可选择接口,同时监控多个网络接口速度.<br/><img src="/upload/image/20170924/1506182789267051972.png" alt="www.hostbuf.com/upload/image/20170924/1506182789267051972.png" class="transparent"/><br/><br/>2. 打包传输,自动压缩解压,适合传输大量文件,文件夹和文本文件.<br/><img src="/upload/image/20170924/1506183003447079520.png" title="1506183003447079520.png" alt="z1.png" style="width: 318px; height: 181px;" width="318" height="181"/><img src="/upload/image/20170924/1506183014779017966.png" title="1506183014779017966.png" alt="z2.png" style="width: 311px; height: 181px;" width="311" height="181"/><br/><br/></p><p>3.高级网络监控,监控每个进程监听的端口,以及网络连接状态.<br/><img src="/upload/image/20171118/1511013349812005421.png" title="1511013349812005421.png" alt="222.png"/><br/><br/>4.高级进程管理,详细显示进程信息.<br/><img src="/upload/image/20171118/1511013508693057883.png" title="1511013508693057883.png" alt="ccc.png"/><br/><br/>5.无限制的终端命令历史,路径历史,可快速输入命令,切换路径.<br/><br/>6.不断增加中<br/></p><p></p> 
+													
+													
+												</div>
+											</td>
+										</tr>
+									</table>
+
+								<div style="display: inline-block;  float: right;margin-right: 10px;">
+									
+								</div>
+								<div class="clear"></div>   
+									
+								</div>
+								
+							</div>
+							
+							<div class="tv-rl-wrap">
+								
+							
+								<div style="display: inline-block;  float: right;margin-right: 10px; margin-top: 5px;">
+									
+								</div>
+								<div class="clear"></div> 
+								
+							</div>
+							
+							
+						
+						</div>
+			<div class="clear">
+		</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	
+
+<div class="bottom" style="padding-top: 20px;">
+			
+			<span style="font-size: 11px; color: #888;"><span style="font-size: 11px; ">Powered by HostBuf.com &nbsp;</span>
+		
+			<a target="_blank" href="http://www.finalshell.com/">FinalShell.com</a>
+			</span>
+			
+			<span style="font-size: 0px; color: #FFF;">
+			</span>
+			
+</div>
+	
+	<script type="text/javascript"   >
+   			 SyntaxHighlighter.highlight();
+    </script>
+    <link href="../ui/ueditor/themes/default/css/ueditor.css"  rel="stylesheet"  type="text/css" />
+    <link href="../ui/ueditor/themes/iframe.css"  rel="stylesheet"  type="text/css" />
+    <script type="text/javascript"   src="../ui/ueditor/ueditor.config.js"  charset="utf-8" ></script>
+    <script type="text/javascript"    src="../ui/ueditor/ueditor.all.min.js"  charset="utf-8" > </script>
+    <script type="text/javascript"   src="../ui/ueditor/lang/zh-cn/zh-cn.js"  charset="utf-8" ></script>
+    
+</body>
+
+</html>

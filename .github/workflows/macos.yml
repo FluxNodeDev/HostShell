@@ -1,0 +1,39 @@
+name: macOS build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build app
+        run: npx electron-vite build
+
+      - name: Package dmg + zip (universal)
+        run: npx electron-builder --mac --universal --publish never
+
+      - name: List artifacts
+        run: ls -lh release/
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: hostshell-macos
+          path: |
+            release/*.dmg
+            release/*.zip
+          if-no-files-found: warn

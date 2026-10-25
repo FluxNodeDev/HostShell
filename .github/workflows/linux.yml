@@ -1,0 +1,43 @@
+name: Linux build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build app
+        run: npx electron-vite build
+
+      - name: Package AppImage
+        run: npx electron-builder --linux AppImage --x64 --publish never
+
+      - name: Package deb
+        run: npx electron-builder --linux deb --x64 --publish never
+        continue-on-error: true
+
+      - name: List artifacts
+        run: ls -lh release/
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: hostshell-linux
+          path: |
+            release/*.AppImage
+            release/*.deb
+          if-no-files-found: warn

@@ -1,0 +1,67 @@
+﻿
+FinalShell SSH工具,服务器管理,远程桌面加速软件,支持Windows,macOS,Linux,版本4.6.3,更新日期2025.5.21 - FinalShell官网 
+HOSTBUF 
+FinalShell 
+注册    
+    登录 
+最新回复 
+-->
+-->
+FinalShell SSH工具,服务器管理,远程桌面加速软件,支持Windows,macOS,Linux,版本4.6.3,更新日期2025.5.21 
+wntr 
+2017-01-17 11:08  115月前  7135584 阅读 0 回复 
+ FinalShell 
+FinalShell是一体化的的服务器,网络管理软件,不仅是ssh客户端,还是功能强大的开发,运维工具,充分满足开发,运维需求.
+特色功能:
+云端同步,免费海外服务器远程桌面加速,ssh加速,本地化命令输入框,支持自动补全,命令历史,自定义命令参数.
+Windows X64版,下载地址: 
+ https://dl.hostbuf.com/finalshell3/finalshell_windows_x64.exe 
+macOS Arm版,支持m1,m2,m3 cpu,下载地址:
+ https://dl.hostbuf.com/finalshell3/finalshell_macos_arm64.pkg 
+macOS X64版,支持旧款intel cpu,下载地址:
+ https://dl.hostbuf.com/finalshell3/finalshell_macos_x64.pkg 
+Linux X64版,下载地址: 
+ https://dl.hostbuf.com/finalshell3/finalshell_linux_x64.deb 
+Linux Arm64版,下载地址: 
+ https://dl.hostbuf.com/finalshell3/finalshell_linux_arm64.deb 
+Linux LoongArch64龙芯版,下载地址: 
+ https://dl.hostbuf.com/finalshell3/finalshell_linux_loong64.deb 
+.
+更新日志:
+ https://www.hostbuf.com/t/989.html 
+主要特性:
+1.多平台支持Windows,macOS,Linux
+2.多标签,批量服务器管理.
+3.支持登录ssh和Windows远程桌面.
+4.漂亮的平滑字体显示,内置100多个配色方案.
+5.终端,sftp同屏显示,同步切换目录.
+6.命令自动提示,智能匹配,输入更快捷,方便.
+7.sftp支持,通过各种优化技术,加载更快,切换,打开目录无需等待.
+8.服务器网络,性能实时监控,无需安装服务器插件.
+9.内置海外服务器加速,加速远程桌面和ssh连接,操作流畅无卡顿.
+10.内存,Cpu性能监控,Ping延迟丢包,Trace路由监控.
+11.实时硬盘监控.
+12.进程管理器.
+13.快捷命令面板,可同时显示数十个命令.
+14.内置文本编辑器,支持语法高亮,代码折叠,搜索,替换.
+15.ssh和远程桌面均支持代理服务器.
+16.打包传输,自动压缩解压.
+17.支持rz,sz (zmodem)
+18.多地点ping监控
+19.命令输入框,支持自动补全命令,命令历史
+20.自定义命令参数功能,可动态根据输入参数生成命令
+21.可设置终端背景图片,并拥有动态背景模糊,文字阴影效果.
+22.一键查看各种系统信息
+23.命令输入框快速显示并选择主机上的文件
+界面截图:
+查看系统消息
+进程管理器
+主机检测,Ping监控,Trace实时跟踪
+高级网络监控,监控每个进程监听的端口,以及网络连接状态. 
+打包传输,自动压缩解压,适合传输大量文件,文件夹和文本文件.
+快速输入路径功能,可在窗口显示并选择系统的目录和文件(终端命令输入框) 
+历史命令左右键选择字段输入功能(命令输入框)
+快速输入命令名称功能(命令输入框)
+Powered by HostBuf.com   
+FinalShell.com 
+

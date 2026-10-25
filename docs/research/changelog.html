@@ -1,0 +1,315 @@
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="旧版本下载(如果最新版本出现问题,可暂时下载旧版本替代)2025.5.21版本号4.6提高70%启动速度修复bug2024.10.28版本号4.5.11修复bug2024.9.26版本号4.5.9解决打开多个标签时终端显示卡顿问题修复windows安装程序乱码问题修复bug2024.8.27版本号4.5.6修复之前更新导致无法打开连接管理器问题修复bug2024.8.13版本号4.5修改切换按键为单击Ctrl(命令输入框)增加历史命令左右键选择字段输入功能(命令输入框)增加命令名称快速输入功能(命令输入框)专业版增加快速输入路径功能,可在窗口显示并选择系统的目录文件列表(命令输入框)2024.1.12版本号4.3.11(仅macOS版)降低内存占用2023.12.31版本号4.3.10支持arm64,龙芯架构系统.(linux旧版升级需要重新下载deb安装包)2023.11.15版本号4.3升级最新的JediTerm,支持更多终端特性,修复大量终端显示问题.2023.8.20版本号4.2.4.1修复windows版部分系统下软件界面混乱问题2023.8.10版本号4.2.4修复某些情况下ping,tracert失败问题2023.8.4版本号4.2.3终端支持更多的加密算法修复路由追踪失败问题修复macOs安装提示损坏问题修复macOs终端卡顿问题2023.7.28版本号4.2.1升" />
+<title>更新日志 - FinalShell官网</title>
+	
+	<link rel="stylesheet" href="https://www.hostbuf.com:443//ui/font-awesome-4.5.0/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="https://www.hostbuf.com:443//ui/base/theme.css" />
+	
+	<script type="text/javascript"   src="../ui/ueditor/third-party/SyntaxHighlighter/shCore.js"   charset="utf-8" ></script>
+    <link href="../ui/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css"  rel="stylesheet"  type="text/css" />
+    
+<script type="text/javascript">
+
+function replyto(userId){
+	var message="@"+userId+"  ";
+	 UE.getEditor('editor').execCommand('insertHtml',message );
+}
+
+function setDisabled() {
+    UE.getEditor('editor').setDisabled('fullscreen');
+    disableBtn("enable");
+}
+
+function init(){
+		var initContent='';
+		if(false){
+			initContent='<p style="color:#555;line-height: 6em; text-align: center;font-size: 13px;margin-top: 15px;"><a style="color:#104E8B;text-decoration: none;" target="_top" href="https://www.hostbuf.com:443/login">登录</a> 后回复,<a style="color:#104E8B;text-decoration: none;" target="_top" href="https://www.hostbuf.com:443/register">立即注册</a><br/></p>';
+		}
+	  var ue = UE.getEditor('editor', {
+		    enableContextMenu: false,
+		    elementPathEnabled: false, 
+		    wordCount: false,
+		    autosave:false,
+		    initialFrameHeight:90, 
+		    wordCountMsg: '{#count}/10000',
+           readonly:false,
+			initialContent:initContent,
+		    toolbars: [
+		               ['fontfamily','fontsize','link', 'unlink','horizontal','removeformat','pasteplain','source'],
+		               ['bold','italic','underline','forecolor','backcolor','emotion','simpleupload','insertimage','scrawl','insertcode','insertvideo','attachment','preview','fullscreen']
+		    ]
+       });
+}
+	  
+
+function initasyn(){ 
+  setTimeout(function () {
+	  init();
+}, 0);
+}
+
+function updateRight(){
+	var rs=document.getElementById("rightside");
+	var cp=document.getElementById("contentpanel");
+	var rsX=cp.offsetLeft+cp.offsetWidth;
+	var rsWidth=cp.offsetWidth*0.3;
+	var ptop=document.documentElement.scrollTop;
+	if(ptop==0){
+		ptop=document.body.scrollTop;
+	}
+	if(ptop>30){
+		rs.style.top =20+"px";
+		
+	}else{
+		rs.style.top =10+cp.offsetTop+ 'px';
+	}
+	rs.style.left = 15+rsX+'px';
+	rs.style.width = rsWidth+'px';
+}
+
+
+function getElementTop(element){
+var actualTop = element.offsetTop;
+var current = element.offsetParent;
+while (current !== null){
+actualTop += current.offsetTop;
+current = current.offsetParent;
+}
+
+return actualTop;
+}
+
+function isIE() { //ie?
+    if (!!window.ActiveXObject || "ActiveXObject" in window)
+      return true;
+    else
+      return false;
+  }
+
+function scrollinit(){
+	gotoreply(window.location);
+	if(!isIE()){
+		setTimeout(function(){gotoreply(window.location);}, 0); 
+	}else{
+		for(var i=1;i<5;i++){
+			setTimeout(function(){gotoreply(window.location);}, i*100);  
+		}
+	}
+
+}
+
+function gotoreply(url){
+	var id=url.hash
+	if(id!=""){
+		id=id.substr(1);
+		if(id!=""){
+			var ri=document.getElementById(id);
+			ri.style.backgroundColor="#FFF8DC";  
+			
+			var scrollY=getElementTop(ri)-200; 
+			window.scroll(0,scrollY);
+			setTimeout(function(){ri.style.backgroundColor='#FFF';}, 2000); 
+		}
+	}
+}
+
+
+window.onresize=updateRight;
+window.onscroll=document.onscroll=updateRight;  
+
+</script> 
+
+</head>
+
+<body onload="initasyn();updateRight();scrollinit();" >
+
+	
+
+
+
+
+
+<div class="top">
+	<div class="top-content td0">
+		<table>
+			<tr>
+				<td style="width: 100%;">
+<div class="catalog-nav">
+			
+			<a class="top-logo" href="https://www.hostbuf.com:443/">HOSTBUF</a>
+			
+			<a class="catalog-item"    style="font-size: 12px;padding-top: 12px;padding-bottom: 12px;" href="https://www.hostbuf.com:443/c/131.html">FinalShell</a>
+			 
+		</div> 
+				</td>
+				
+				
+			</tr>
+
+		</table>
+		
+		<div class="catalog-right">
+		
+		
+			
+			
+			<a href="https://www.hostbuf.com:443/register">注册</a>&nbsp;&nbsp; 
+			<a href="https://www.hostbuf.com:443/login"><i class="fa fa-lock font16">&nbsp;&nbsp;</i>登录</a> 
+			
+		</div>
+		
+	</div>
+	
+</div>
+
+
+
+
+ 
+
+	<div class="wrap">
+			<div class="content">
+			
+			
+						
+				<div class="main">
+					<div class="mainpanel">
+							<div id="rightside" class="rightsidebar tablestyle">
+								<table class="td0">
+									<tr class="tabletr">
+										<td colspan="2">
+											<div class="simple-table-head-wrap ">
+											<span class="cb-item selected simple" ><i class="fa fa-commenting-o  fa-font16 simple-list-item-head-top" ></i>最新回复</span>
+											</div>
+										</td>
+										<!--<td class="td-reply-count"><span class="table-head-item">  </span></td>-->
+									</tr>
+									
+									
+								</table>
+								
+							</div>
+	
+	
+												
+						<div id="contentpanel" class="tv-wrap">
+							<div class="tv-main">
+								<div class="tv-main-top">
+									<table class="td0">
+										<tr style="background: rgb(255, 255, 255) none repeat scroll 0% 0%;">
+											
+											<td valign="top">
+												<div class="tv-main-head-wrap">
+													<!--<video style="border-radius: 3px;" height="100" autoplay loop muted> 
+														<source src="head.mp4" type="video/mp4" />
+													</video>-->
+													<a href="https://www.hostbuf.com:443/user/wntr.html"><img class="tv-main-head" src="https://www.hostbuf.com:443/profileimages/VokRaU.jpg"/></a>
+												</div>
+											</td>
+											
+											<td width="100%" valign="center"  > 
+											
+												<div style="" >
+													<div class="tv-main-title">
+													<span >更新日志</span>
+													</div>
+												<div class="tv-main-info">
+												
+															<a class="tv-main-info-author" href="https://www.hostbuf.com:443/user/wntr.html">wntr</a>
+												
+													<span class="tv-main-info-other">2017-01-16 23:01&nbsp;&nbsp;115月前&nbsp;&nbsp;1068227&nbsp;阅读&nbsp;0&nbsp;回复</span>
+													<a class="tv-main-info-catalog" href="https://www.hostbuf.com:443/c/131.html">FinalShell</a>
+													
+												</div>
+												</div>
+											</td>
+											
+										</tr>
+										<tr>
+											
+											<td></td>
+											
+											<td >
+												<div class="tv-main-content" >
+													
+													
+													<p></p><p><a class="list-item-title" href="https://www.hostbuf.com:443/t/1326.html" style="text-decoration: underline;">旧版本下载(如果最新版本出现问题,可暂时下载旧版本替代)</a><br/><br/>2025.5.21 版本号 4.6<br/>提高70%启动速度<br/>修复bug<br/><br/>2024.10.28 版本号 4.5.11<br/>修复bug<br/><br/>2024.9.26 版本号 4.5.9<br/>解决打开多个标签时终端显示卡顿问题<br/>修复windows安装程序乱码问题<br/>修复bug<br/><br/>2024.8.27 版本号 4.5.6<br/>修复之前更新导致无法打开连接管理器问题<br/>修复bug<br/><br/>2024.8.13 版本号4.5<br/>修改切换按键为单击Ctrl(命令输入框)<br/>增加历史命令左右键选择字段输入功能(命令输入框)<br/>增加命令名称快速输入功能(命令输入框)<br/>专业版增加快速输入路径功能,可在窗口显示并选择系统的目录文件列表(命令输入框)<br/><br/>2024.1.12 版本号4.3.11 (仅macOS版)<br/>降低内存占用<br/><br/>2023.12.31 版本号4.3.10<br/>支持arm64,龙芯架构系统.<br/>(linux旧版升级需要重新下载deb安装包)<br/><br/>2023.11.15 版本号4.3<br/>升级最新的JediTerm,支持更多终端特性,修复大量终端显示问题.<br/><br/>2023.8.20 版本号4.2.4.1<br/>修复windows版部分系统下软件界面混乱问题<br/><br/>2023.8.10 版本号4.2.4<br/>修复某些情况下ping,tracert失败问题<br/><br/>2023.8.4 版本号4.2.3<br/>终端支持更多的加密算法<br/>修复路由追踪失败问题<br/>修复macOs安装提示损坏问题<br/>修复macOs终端卡顿问题<br/><br/>2023.7.28 版本号4.2.1<br/>升级java17<br/>升级最新jsch<br/>使用新的界面库<br/>修复bug<br/><br/>2023.6.9 版本号4.0<br/>连接管理器支持复制，剪切，粘贴<br/>修复macos下全屏切换显示错误的bug<br/><br/>2023.6.5 版本号3.9.8.3<br/>优化性能,降低内存占用<br/><br/>2023.1.30 版本号3.9.8<br/>修复bug<br/><br/>2022.10.26 版本号3.9.7<br/>更新到最新的jsch库 https://github.com/mwiede/jsch ，支持更多加密算法 <br/>移动文件会弹出提示窗口<br/>可清理快速连接列表<br/>修复bug<br/><br/>2022.9.7 版本号3.9.6<br/>解决内存泄漏,高内存占用问题.<br/>修复bug.<br/><br/>2022.6.1 版本号3.9.5<br/>增加删除恢复功能,删除的连接可在30天内恢复,并且支持云同步删除信息.<br/>修复bug.<br/><br/>2022.3.25 版本号3.9.4<br/>增加配置文件自动备份功能,避免断电死机导致配置丢失.<br/>增加下载目录设置按钮.<br/><br/>2022.1.10 版本号3.9.3<br/>增加多个内置字体.<br/>增加自动切换加速节点,避免加速失败.<br/>增加加速,代理连接提示.<br/>修复bug.<br/><br/>2021.6.28 版本号3.9.2<br/>改进配置保存方式,避免配置丢失<br/>修复ip地理位置解析失败问题<br/><br/>2021.5.17 版本号3.9<br/>增加离线激活功能.<br/>修复bug,优化性能.<br/><br/>2021.1.7 版本号3.8<br/>增加终端背景图片功能<br/>增加查看系统信息功能<br/>修复bug<br/><a target="_blank" href="http://www.hostbuf.com/upload/image/20170426/1493144242449041493.png"><img style="width: 506px; height: 379px;" alt="task_manager.png" src="/upload/image/20170426/1493144242449041493.png" title="1493144242449041493.png" width="506" height="379"/></a><br/><br/>2017.4.15 版本号1.8<br/>增加专业版功能:硬盘监控<br/><img alt="hdm.png" src="http://www.hostbuf.com/upload/image/20170415/1492231431290045896.png" title="1492231431290045896.png"/><br/>修复多个bug<br/><br/>2017.3.24 版本号1.7<br/>增加主机检测功能<br/>减少内存占用<br/><a target="_blank" href="http://www.hostbuf.com/upload/image/20170318/1489816839440065576.png"><img style="width: 545px; height: 412px;" alt="1.7.png" src="http://www.hostbuf.com/upload/image/20170318/1489816839440065576.png" title="1489816839440065576.png" width="545" height="412"/></a><br/><br/>2017.2.28 版本号1.64<br/>增加复制标签功能<br/>增加自动选中标签选项<br/>侧栏增加主机地址信息<br/>修复mysql有时无法显示历史命令的问题<br/><br/>2017.2.27 版本号1.63<br/>修复访问历史无法点击滚动条问题<br/>修复编辑文件上传错误问题<br/>修复conn目录误修改问题<br/><br/>2017.2.23 版本号1.62<br/>修复命令提示,终端粘贴,访问历史的一些问题<br/><br/>2017.2.22 版本号1.61<br/>关闭窗口自动断开所有连接<br/>修复部分系统无法显示界面问题<br/><br/>2017.2.22 版本号1.6<br/>增加服务器双边加速功能<br/>增加开机启动和最小化到托盘选项<br/>修复多个bug<br/><br/>2017.2.17 版本号1.51<br/>解决部分服务器登录即自动断开问题<br/>修复无法显示任务管理器问题<br/><br/>2017.2.16 版本号1.5<br/>美化外观<br/>修复多个bug<br/><br/>2017.2.15 版本号1.43<br/>增加图形化任务管理器,可按cpu,内存排序<br/><img alt="top.png" src="/upload/image/20170215/1487122405641093990.png" title="1487122405641093990.png"/><br/><br/>2017.2.14 版本号1.42<br/>sftp多处改进<br/>上传,新建自动刷新属性<br/>修复多个上传bug<br/><br/>2017.2.13 版本号1.41<br/>加入双缓冲,优化终端显示效果和速度<br/><br/>2017.2.13 版本号1.4<br/>重写标签栏,解决旧标签栏的各种问题<br/>改进终端搜索功能<br/>优化终端显示速度<br/>修复zsh有时无法显示历史命令问题<br/>修复mysql按上下方向键无反应问题<br/><br/>2017.2.6 版本号1.3<br/>增加终端文字搜索,高亮<br/><img alt="2.png" src="/upload/image/20170206/1486351827734042513.png" title="1486351827734042513.png"/><br/><br/>2017.2.5 版本号1.25<br/>增加sftp快速访问,快速打开目录和文件<br/>智能匹配历史文件<br/><img alt="f1.png" src="/upload/image/20170205/1486254526336036658.png" title="1486254526336036658.png"/><br/><br/>2017.2.3 版本号1.2<br/>完善文件浏览功能,支持排序,权限等<br/>改进外观<br/>修复多个bug<br/><br/>2017.2.2 版本号1.12<br/>可设置编辑器,选择打开方式<br/>修复中文字符多余空格问题<br/>终端按方向键自动滚动到底部<br/>修复多个bug<br/><br/>2017.1.31 版本号1.1<br/>增加自定义加速<br/><br/>2017.1.29 版本号1.0<br/>修复命令自动提示问题<br/>修复多个bug<br/><br/>2017.1.26 版本号0.95<br/>重写命令自动提示,基本解决无显示问题<br/>兼容zsh<br/>修复多个bug<br/><br/>2017.1.20 版本号0.92<br/>修复多个bug<br/>文本框增加右键菜单<br/>自动获取管理员权限<br/>英文字体改为consola<br/><br/>2017.1.17 版本号0.91<br/>修复多个bug<br/>完善远程桌面支持<br/><br/>2017.1.14 版本号0.9<br/>修复多个配色bug<br/>支持外部拖拽上传文件<br/>自动保存窗口位置布局<br/>界面感应调色,颜色更柔和<br/><br/>2017.1.10 版本号0.8<br/>去除命令地址栏,无缝结合shell终端,自动输入提示<br/><br/>2017.1.9 版本号0.7<br/>增加命令输入框,自动匹配<br style="color: rgb(0, 0, 0); font-family: 微软雅黑, &#39;MS Sans Serif&#39;, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 237, 196);"/>增加shell主题选择<br/><br/>2016.12.24 版本号0.5<br/>支持win远程桌面,文件传输,网络,性能监控.<br/></p><p><br/>2016.10.16 版本号0.1<br/>支持登录SSH</p><br/><br/> 
+													
+													
+												</div>
+											</td>
+										</tr>
+									</table>
+
+								<div style="display: inline-block;  float: right;margin-right: 10px;">
+									
+								</div>
+								<div class="clear"></div>   
+									
+								</div>
+								
+							</div>
+							
+							<div class="tv-rl-wrap">
+								
+							
+								<div style="display: inline-block;  float: right;margin-right: 10px; margin-top: 5px;">
+									
+								</div>
+								<div class="clear"></div> 
+								
+							</div>
+							
+							
+						
+						</div>
+			<div class="clear">
+		</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	
+
+<div class="bottom" style="padding-top: 20px;">
+			
+			<span style="font-size: 11px; color: #888;"><span style="font-size: 11px; ">Powered by HostBuf.com &nbsp;</span>
+		
+			<a target="_blank" href="http://www.finalshell.com/">FinalShell.com</a>
+			</span>
+			
+			<span style="font-size: 0px; color: #FFF;">
+			</span>
+			
+</div>
+	
+	<script type="text/javascript"   >
+   			 SyntaxHighlighter.highlight();
+    </script>
+    <link href="../ui/ueditor/themes/default/css/ueditor.css"  rel="stylesheet"  type="text/css" />
+    <link href="../ui/ueditor/themes/iframe.css"  rel="stylesheet"  type="text/css" />
+    <script type="text/javascript"   src="../ui/ueditor/ueditor.config.js"  charset="utf-8" ></script>
+    <script type="text/javascript"    src="../ui/ueditor/ueditor.all.min.js"  charset="utf-8" > </script>
+    <script type="text/javascript"   src="../ui/ueditor/lang/zh-cn/zh-cn.js"  charset="utf-8" ></script>
+    
+</body>
+
+</html>

@@ -1,0 +1,315 @@
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="FinalShell是一体化的的服务器,网络管理软件,不仅是ssh客户端,还是功能强大的开发,运维工具,充分满足开发,运维需求.特色功能:云端同步,免费海外服务器远程桌面加速,ssh加速,本地化命令输入框,支持自动补全,命令历史,自定义命令参数.WindowsX64版,下载地址:https://dl.hostbuf.com/finalshell3/finalshell_windows_x64.exemacOSArm版,支持m1,m2,m3cpu,下载地址:https://dl.hostbuf.com/finalshell3/finalshell_macos_arm64.pkgmacOSX64版,支持旧款intelcpu,下载地址:https://dl.hostbuf.com/finalshell3/finalshell_macos_x64.pkgLinuxX64版,下载地址:https://dl.hostbuf.com/finalshell3/finalshell_linux_x64.debLinuxArm64版,下载地址:https://dl.hostbuf.com/finalshell3/finalshell_linux_arm64.debLinuxLoongArch64龙芯版,下载地址:https://dl.hostbuf.com/finalshell3/finalshell" />
+<title>FinalShell SSH工具,服务器管理,远程桌面加速软件,支持Windows,macOS,Linux,版本4.6.3,更新日期2025.5.21 - FinalShell官网</title>
+	
+	<link rel="stylesheet" href="https://www.hostbuf.com:443//ui/font-awesome-4.5.0/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="https://www.hostbuf.com:443//ui/base/theme.css" />
+	
+	<script type="text/javascript"   src="../ui/ueditor/third-party/SyntaxHighlighter/shCore.js"   charset="utf-8" ></script>
+    <link href="../ui/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css"  rel="stylesheet"  type="text/css" />
+    
+<script type="text/javascript">
+
+function replyto(userId){
+	var message="@"+userId+"  ";
+	 UE.getEditor('editor').execCommand('insertHtml',message );
+}
+
+function setDisabled() {
+    UE.getEditor('editor').setDisabled('fullscreen');
+    disableBtn("enable");
+}
+
+function init(){
+		var initContent='';
+		if(false){
+			initContent='<p style="color:#555;line-height: 6em; text-align: center;font-size: 13px;margin-top: 15px;"><a style="color:#104E8B;text-decoration: none;" target="_top" href="https://www.hostbuf.com:443/login">登录</a> 后回复,<a style="color:#104E8B;text-decoration: none;" target="_top" href="https://www.hostbuf.com:443/register">立即注册</a><br/></p>';
+		}
+	  var ue = UE.getEditor('editor', {
+		    enableContextMenu: false,
+		    elementPathEnabled: false, 
+		    wordCount: false,
+		    autosave:false,
+		    initialFrameHeight:90, 
+		    wordCountMsg: '{#count}/10000',
+           readonly:false,
+			initialContent:initContent,
+		    toolbars: [
+		               ['fontfamily','fontsize','link', 'unlink','horizontal','removeformat','pasteplain','source'],
+		               ['bold','italic','underline','forecolor','backcolor','emotion','simpleupload','insertimage','scrawl','insertcode','insertvideo','attachment','preview','fullscreen']
+		    ]
+       });
+}
+	  
+
+function initasyn(){ 
+  setTimeout(function () {
+	  init();
+}, 0);
+}
+
+function updateRight(){
+	var rs=document.getElementById("rightside");
+	var cp=document.getElementById("contentpanel");
+	var rsX=cp.offsetLeft+cp.offsetWidth;
+	var rsWidth=cp.offsetWidth*0.3;
+	var ptop=document.documentElement.scrollTop;
+	if(ptop==0){
+		ptop=document.body.scrollTop;
+	}
+	if(ptop>30){
+		rs.style.top =20+"px";
+		
+	}else{
+		rs.style.top =10+cp.offsetTop+ 'px';
+	}
+	rs.style.left = 15+rsX+'px';
+	rs.style.width = rsWidth+'px';
+}
+
+
+function getElementTop(element){
+var actualTop = element.offsetTop;
+var current = element.offsetParent;
+while (current !== null){
+actualTop += current.offsetTop;
+current = current.offsetParent;
+}
+
+return actualTop;
+}
+
+function isIE() { //ie?
+    if (!!window.ActiveXObject || "ActiveXObject" in window)
+      return true;
+    else
+      return false;
+  }
+
+function scrollinit(){
+	gotoreply(window.location);
+	if(!isIE()){
+		setTimeout(function(){gotoreply(window.location);}, 0); 
+	}else{
+		for(var i=1;i<5;i++){
+			setTimeout(function(){gotoreply(window.location);}, i*100);  
+		}
+	}
+
+}
+
+function gotoreply(url){
+	var id=url.hash
+	if(id!=""){
+		id=id.substr(1);
+		if(id!=""){
+			var ri=document.getElementById(id);
+			ri.style.backgroundColor="#FFF8DC";  
+			
+			var scrollY=getElementTop(ri)-200; 
+			window.scroll(0,scrollY);
+			setTimeout(function(){ri.style.backgroundColor='#FFF';}, 2000); 
+		}
+	}
+}
+
+
+window.onresize=updateRight;
+window.onscroll=document.onscroll=updateRight;  
+
+</script> 
+
+</head>
+
+<body onload="initasyn();updateRight();scrollinit();" >
+
+	
+
+
+
+
+
+<div class="top">
+	<div class="top-content td0">
+		<table>
+			<tr>
+				<td style="width: 100%;">
+<div class="catalog-nav">
+			
+			<a class="top-logo" href="https://www.hostbuf.com:443/">HOSTBUF</a>
+			
+			<a class="catalog-item"    style="font-size: 12px;padding-top: 12px;padding-bottom: 12px;" href="https://www.hostbuf.com:443/c/131.html">FinalShell</a>
+			 
+		</div> 
+				</td>
+				
+				
+			</tr>
+
+		</table>
+		
+		<div class="catalog-right">
+		
+		
+			
+			
+			<a href="https://www.hostbuf.com:443/register">注册</a>&nbsp;&nbsp; 
+			<a href="https://www.hostbuf.com:443/login"><i class="fa fa-lock font16">&nbsp;&nbsp;</i>登录</a> 
+			
+		</div>
+		
+	</div>
+	
+</div>
+
+
+
+
+ 
+
+	<div class="wrap">
+			<div class="content">
+			
+			
+						
+				<div class="main">
+					<div class="mainpanel">
+							<div id="rightside" class="rightsidebar tablestyle">
+								<table class="td0">
+									<tr class="tabletr">
+										<td colspan="2">
+											<div class="simple-table-head-wrap ">
+											<span class="cb-item selected simple" ><i class="fa fa-commenting-o  fa-font16 simple-list-item-head-top" ></i>最新回复</span>
+											</div>
+										</td>
+										<!--<td class="td-reply-count"><span class="table-head-item">  </span></td>-->
+									</tr>
+									
+									
+								</table>
+								
+							</div>
+	
+	
+												
+						<div id="contentpanel" class="tv-wrap">
+							<div class="tv-main">
+								<div class="tv-main-top">
+									<table class="td0">
+										<tr style="background: rgb(255, 255, 255) none repeat scroll 0% 0%;">
+											
+											<td valign="top">
+												<div class="tv-main-head-wrap">
+													<!--<video style="border-radius: 3px;" height="100" autoplay loop muted> 
+														<source src="head.mp4" type="video/mp4" />
+													</video>-->
+													<a href="https://www.hostbuf.com:443/user/wntr.html"><img class="tv-main-head" src="https://www.hostbuf.com:443/profileimages/VokRaU.jpg"/></a>
+												</div>
+											</td>
+											
+											<td width="100%" valign="center"  > 
+											
+												<div style="" >
+													<div class="tv-main-title">
+													<span >FinalShell SSH工具,服务器管理,远程桌面加速软件,支持Windows,macOS,Linux,版本4.6.3,更新日期2025.5.21</span>
+													</div>
+												<div class="tv-main-info">
+												
+															<a class="tv-main-info-author" href="https://www.hostbuf.com:443/user/wntr.html">wntr</a>
+												
+													<span class="tv-main-info-other">2017-01-17 11:08&nbsp;&nbsp;115月前&nbsp;&nbsp;7135584&nbsp;阅读&nbsp;0&nbsp;回复</span>
+													<a class="tv-main-info-catalog" href="https://www.hostbuf.com:443/c/131.html">FinalShell</a>
+													
+												</div>
+												</div>
+											</td>
+											
+										</tr>
+										<tr>
+											
+											<td></td>
+											
+											<td >
+												<div class="tv-main-content" >
+													
+													
+													<p>FinalShell是一体化的的服务器,网络管理软件,不仅是ssh客户端,还是功能强大的开发,运维工具,充分满足开发,运维需求.<br/><br/>特色功能:<br/>云端同步,免费海外服务器远程桌面加速,ssh加速,本地化命令输入框,支持自动补全,命令历史,自定义命令参数.<br/><br/><span style="background-color: rgb(255, 255, 0);">Windows X64版,下载地址:</span><br/><a href="https://dl.hostbuf.com/finalshell3/finalshell_windows_x64.exe" target="_blank" textvalue="https://dl.hostbuf.com/finalshell3/finalshell_windows_x64.exe">https://dl.hostbuf.com/finalshell3/finalshell_windows_x64.exe</a><br/><br/><span style="background-color: rgb(255, 255, 0);">macOS Arm版,支持m1,m2,m3 cpu,下载地址:<br/></span><a href="https://dl.hostbuf.com/finalshell3/finalshell_macos_arm64.pkg" target="_blank" title="https://dl.hostbuf.com/finalshell3/finalshell_macos_arm64.pkg">https://dl.hostbuf.com/finalshell3/finalshell_macos_arm64.pkg</a><span style="background-color: rgb(255, 255, 0);"><br/><br/>macOS X64版,支持旧款intel cpu,下载地址:<br/></span><a href="https://dl.hostbuf.com/finalshell3/finalshell_macos_x64.pkg" target="_blank" title="https://dl.hostbuf.com/finalshell3/finalshell_macos_x64.pkg" textvalue="https://dl.hostbuf.com/finalshell3/finalshell_macos_x64.pkg">https://dl.hostbuf.com/finalshell3/finalshell_macos_x64.pkg</a><span style="background-color: rgb(255, 255, 0);"><br/><br/>Linux X64版,下载地址:</span><br/><a href="https://dl.hostbuf.com/finalshell3/finalshell_linux_x64.deb" target="_blank" textvalue="https://dl.hostbuf.com/finalshell3/finalshell_linux_x64.deb">https://dl.hostbuf.com/finalshell3/finalshell_linux_x64.deb</a><br/><br/><span style="background-color: rgb(255, 255, 0);">Linux Arm64版,下载地址:</span><br/><a href="https://dl.hostbuf.com/finalshell3/finalshell_linux_arm64.deb" target="_blank" textvalue="https://dl.hostbuf.com/finalshell3/finalshell_linux_arm64.deb">https://dl.hostbuf.com/finalshell3/finalshell_linux_arm64.deb</a><br/><br/><span style="background-color: rgb(255, 255, 0);">Linux LoongArch64龙芯版,下载地址:</span><br/><a href="https://dl.hostbuf.com/finalshell3/finalshell_linux_loong64.deb" target="_blank" textvalue="https://dl.hostbuf.com/finalshell3/finalshell_linux_loong64.deb">https://dl.hostbuf.com/finalshell3/finalshell_linux_loong64.deb</a><br/><br/>.<br/>更新日志:<br/><a href="https://www.hostbuf.com/t/989.html" target="_self">https://www.hostbuf.com/t/989.html</a><br/><br/>主要特性:<br/>1.多平台支持Windows,macOS,Linux<br/>2.多标签,批量服务器管理.<br/>3.支持登录ssh和Windows远程桌面.<br/>4.漂亮的平滑字体显示,内置100多个配色方案.<br/>5.终端,sftp同屏显示,同步切换目录.<br/>6.命令自动提示,智能匹配,输入更快捷,方便.<br/>7.sftp支持,通过各种优化技术,加载更快,切换,打开目录无需等待.<br/>8.服务器网络,性能实时监控,无需安装服务器插件.<br/>9.内置海外服务器加速,加速远程桌面和ssh连接,操作流畅无卡顿.<br/>10.内存,Cpu性能监控,Ping延迟丢包,Trace路由监控.<br/>11.实时硬盘监控.<br/>12.进程管理器.<br/>13.快捷命令面板,可同时显示数十个命令.<br/>14.内置文本编辑器,支持语法高亮,代码折叠,搜索,替换.<br/>15.ssh和远程桌面均支持代理服务器.<br/>16.打包传输,自动压缩解压.<br/>17.支持rz,sz (zmodem)<br/>18.多地点ping监控<br/>19.命令输入框,支持自动补全命令,命令历史<br/>20.自定义命令参数功能,可动态根据输入参数生成命令<br/>21.可设置终端背景图片,并拥有动态背景模糊,文字阴影效果.<br/>22.一键查看各种系统信息<br/>23.命令输入框快速显示并选择主机上的文件<br/><br/>界面截图:<br/><img src="/upload/image/20210110/1610264529229005910.jpg" title="1610264529229005910.jpg" alt="QQ截图20210110154146.jpg" style="width: 626px; height: 493px;" width="626" height="493"/><br/><br/><img style="width: 187px; height: 119px;" alt="p2.png" src="/upload/image/20170117/1484635173334071105.png" title="1484635173334071105.png" width="187" height="119"/><a target="_blank" href="https://www.hostbuf.com/upload/image/20170117/1484635245728075336.png"><img style="width: 173px; height: 118px;" alt="p4.png" src="https://www.hostbuf.com/upload/image/20170117/1484635245728075336.png" title="1484635245728075336.png" width="173" height="118"/></a><a target="_blank" href="https://www.hostbuf.com/upload/image/20170117/1484635329540047793.png"><img style="width: 179px; height: 118px;" alt="p6.png" src="https://www.hostbuf.com/upload/image/20170117/1484635329540047793.png" title="1484635329540047793.png" width="179" height="118"/><br/></a><br/>查看系统消息<br/><img src="/upload/image/20210107/1609993908577098649.jpg" title="1609993908577098649.jpg" alt="QQ截图20210107121929.jpg" style="width: 551px; height: 410px;" width="551" height="410"/><br/>进程管理器<br/><a target="_blank" href="https://www.hostbuf.com/upload/image/20170426/1493144242449041493.png"><img style="width: 541px; height: 391px;" alt="task_manager.png" src="https://www.hostbuf.com/upload/image/20170426/1493144242449041493.png" title="1493144242449041493.png" width="541" height="391"/></a><br/>主机检测,Ping监控,Trace实时跟踪<br/><a target="_blank" href="https://www.hostbuf.com/upload/image/20170426/1493144485765021287.png" style="text-decoration: none;"><img style="width: 546px; height: 401px;" alt="ping_tracert.png" src="/upload/image/20170426/1493144485765021287.png" title="1493144485765021287.png" width="546" height="401"/><br/></a><br/>高级网络监控,监控每个进程监听的端口,以及网络连接状态.<img src="https://www.hostbuf.com/upload/image/20171118/1511013349812005421.png" title="1511013349812005421.png" alt="222.png"/><br/><br/>打包传输,自动压缩解压,适合传输大量文件,文件夹和文本文件.<br/><img src="https://www.hostbuf.com/upload/image/20170924/1506183003447079520.png" title="1506183003447079520.png" alt="z1.png" style="width: 318px; height: 181px;" width="318" height="181"/><img src="https://www.hostbuf.com/upload/image/20170924/1506183014779017966.png" title="1506183014779017966.png" alt="z2.png" style="width: 311px; height: 181px;" width="311" height="181"/><br/><br/>快速输入路径功能,可在窗口显示并选择系统的目录和文件(终端命令输入框)<img src="https://www.hostbuf.com/upload/image/20240813/1723505878477030348.png" title="1723505878477030348.png" alt="Snipaste_2024-08-13_07-37-45.png" style="width: 694px; height: 409px;" width="694" height="409"/><br/><br/>历史命令左右键选择字段输入功能(命令输入框)<br/><img src="https://www.hostbuf.com/upload/image/20240813/1723520238339014395.png" title="1723520238339014395.png" alt="Snipaste_2024-08-13_11-36-25.png" style="width: 523px; height: 390px;" width="523" height="390"/><br/><br/>快速输入命令名称功能(命令输入框)<br/><img src="https://www.hostbuf.com/upload/image/20240826/1724643308483074977.png" title="1724643308483074977.png" alt="Snipaste_2024-08-26_11-34-57.png" style="width: 397px; height: 267px;" width="397" height="267"/></p> 
+													
+													
+												</div>
+											</td>
+										</tr>
+									</table>
+
+								<div style="display: inline-block;  float: right;margin-right: 10px;">
+									
+								</div>
+								<div class="clear"></div>   
+									
+								</div>
+								
+							</div>
+							
+							<div class="tv-rl-wrap">
+								
+							
+								<div style="display: inline-block;  float: right;margin-right: 10px; margin-top: 5px;">
+									
+								</div>
+								<div class="clear"></div> 
+								
+							</div>
+							
+							
+						
+						</div>
+			<div class="clear">
+		</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	
+
+<div class="bottom" style="padding-top: 20px;">
+			
+			<span style="font-size: 11px; color: #888;"><span style="font-size: 11px; ">Powered by HostBuf.com &nbsp;</span>
+		
+			<a target="_blank" href="http://www.finalshell.com/">FinalShell.com</a>
+			</span>
+			
+			<span style="font-size: 0px; color: #FFF;">
+			</span>
+			
+</div>
+	
+	<script type="text/javascript"   >
+   			 SyntaxHighlighter.highlight();
+    </script>
+    <link href="../ui/ueditor/themes/default/css/ueditor.css"  rel="stylesheet"  type="text/css" />
+    <link href="../ui/ueditor/themes/iframe.css"  rel="stylesheet"  type="text/css" />
+    <script type="text/javascript"   src="../ui/ueditor/ueditor.config.js"  charset="utf-8" ></script>
+    <script type="text/javascript"    src="../ui/ueditor/ueditor.all.min.js"  charset="utf-8" > </script>
+    <script type="text/javascript"   src="../ui/ueditor/lang/zh-cn/zh-cn.js"  charset="utf-8" ></script>
+    
+</body>
+
+</html>

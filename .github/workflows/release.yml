@@ -1,0 +1,141 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build app
+        run: npx electron-vite build
+
+      - name: Package portable ZIP
+        run: npx electron-builder --win zip --x64 --publish never
+
+      - name: Prepare NSIS
+        shell: pwsh
+        run: |
+          $dest = "$env:LOCALAPPDATA\electron-builder\Cache\nsis\nsis-3.0.4.1"
+          New-Item -ItemType Directory -Force -Path $dest | Out-Null
+          curl.exe -L --fail -o nsis.7z "https://github.com/electron-userland/electron-builder-binaries/releases/download/nsis-3.0.4.1/nsis-3.0.4.1.7z"
+          7z x nsis.7z "-o$dest" -y | Out-Null
+
+      - name: Build installer
+        shell: pwsh
+        run: |
+          $version = $env:GITHUB_REF_NAME -replace '^v', ''
+          $makensis = "$env:LOCALAPPDATA\electron-builder\Cache\nsis\nsis-3.0.4.1\Bin\makensis.exe"
+          & $makensis "/DAPP_VERSION=$version" /INPUTCHARSET UTF8 build\installer.nsi
+          if (-not (Test-Path "release\HostShell-$version-setup.exe")) { throw "installer not produced" }
+
+      - name: Publish release assets
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            release/*-win.zip
+            release/*-setup.exe
+            release/*.AppImage
+            release/*.deb
+          body: |
+            ## HostShell ${{ github.ref_name }}
+
+            一体化服务器管理工具（MIT 开源）：SSH 终端、SFTP、实时监控、隧道、Zmodem。
+
+            ### 下载
+            - **HostShell-*-setup.exe** — Windows 安装版（推荐）：安装到 Program Files，带快捷方式与卸载项
+            - **HostShell-*-win.zip** — Windows 绿色版：解压后直接运行 `HostShell.exe`
+            - **HostShell-*-universal.dmg** — macOS 安装镜像（Intel + Apple Silicon 通用，未签名）
+            - **HostShell-*-mac.zip** — macOS 压缩版
+            - **HostShell-*.AppImage** — Linux 免安装包
+            - **hostshell_*_amd64.deb** — Debian / Ubuntu 安装包
+
+            ### 说明
+            - 构建由 GitHub Actions 在 windows / macos / ubuntu 三个 runner 上完成，源码与 tag 对应。
+            - macOS 包未做 Apple 签名与公证：首次打开需右键「打开」，或执行
+              `xattr -dr com.apple.quarantine /Applications/HostShell.app`。
+            - Linux 包由 ubuntu-latest 构建；AppImage 需 `chmod +x` 后运行。
+
+  linux:
+    # 等 Windows 作业先创建 Release，Linux 作业只追加上传资产
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build app
+        run: npx electron-vite build
+
+      - name: Package AppImage
+        run: npx electron-builder --linux AppImage --x64 --publish never
+
+      - name: Package deb
+        run: npx electron-builder --linux deb --x64 --publish never
+
+      - name: Publish Linux assets
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            release/*.AppImage
+            release/*.deb
+
+  mac:
+    # 等 Windows 作业先创建 Release，macOS 作业只追加上传资产
+    needs: build
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build app
+        run: npx electron-vite build
+
+      - name: Package dmg + zip (universal, unsigned)
+        run: npx electron-builder --mac --universal --publish never
+
+      - name: Publish macOS assets
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            release/*.dmg
+            release/*.zip

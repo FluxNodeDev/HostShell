@@ -1,0 +1,157 @@
+{
+  "name": "hostshell",
+  "version": "0.17.2",
+  "productName": "HostShell",
+  "description": "HostShell - 一体化服务器管理工具",
+  "main": "./out/main/index.js",
+  "author": { "name": "FluxNodeDev", "email": "FluxNodeDev@users.noreply.github.com" },
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "electron-vite dev",
+    "dev:web": "vite --config electron.vite.config.ts",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "start": "electron-vite preview",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json",
+    "dist": "electron-vite build && electron-builder --win --x64",
+    "dist:dir": "electron-vite build && electron-builder --win --x64 --dir",
+    "dist:setup": "electron-vite build && electron-builder --win --x64 --dir && \"%LOCALAPPDATA%/electron-builder/Cache/nsis/nsis-3.0.4.1/Bin/makensis.exe\" /INPUTCHARSET UTF8 build/installer.nsi"
+  },
+  "build": {
+    "appId": "com.hostshell.app",
+    "productName": "HostShell",
+    "copyright": "HostShell",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "out/**/*",
+      "package.json",
+      "!**/*.map"
+    ],
+    "extraResources": [
+      {
+        "from": "build/icon.png",
+        "to": "icon.png"
+      }
+    ],
+    "mac": {
+      "icon": "build/icon.png",
+      "category": "public.app-category.developer-tools",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "universal"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "universal"
+          ]
+        }
+      ],
+      "identity": null,
+      "hardenedRuntime": false
+    },
+    "linux": {
+      "icon": "build/icon.png",
+      "category": "Network",
+      "maintainer": "FluxNodeDev <FluxNodeDev@users.noreply.github.com>",
+      "synopsis": "All-in-one server workbench: SSH, SFTP, metrics, tunnels",
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "deb",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "asar": true,
+    "electronLanguages": [
+      "zh-CN",
+      "en-US"
+    ],
+    "compression": "maximum",
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "HostShell"
+    },
+    "portable": {
+      "artifactName": "HostShell-${version}-portable.exe"
+    }
+  },
+  "dependencies": {
+    "ssh2": "^1.16.0",
+    "zmodem.js": "^0.1.10"
+  },
+  "devDependencies": {
+    "@codemirror/lang-css": "^6.3.0",
+    "@codemirror/lang-html": "^6.4.9",
+    "@codemirror/lang-javascript": "^6.2.2",
+    "@codemirror/lang-json": "^6.0.1",
+    "@codemirror/lang-markdown": "^6.3.0",
+    "@codemirror/lang-python": "^6.1.6",
+    "@codemirror/lang-sql": "^6.8.0",
+    "@codemirror/language": "^6.13.1",
+    "@codemirror/legacy-modes": "^6.5.5",
+    "@codemirror/state": "^6.4.1",
+    "@codemirror/theme-one-dark": "^6.1.3",
+    "@codemirror/view": "^6.34.1",
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@types/ssh2": "^1.15.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "@xterm/addon-fit": "^0.10.0",
+    "@xterm/addon-search": "^0.15.0",
+    "@xterm/addon-unicode11": "^0.8.0",
+    "@xterm/addon-web-links": "^0.11.0",
+    "@xterm/addon-webgl": "^0.18.0",
+    "@xterm/xterm": "^5.5.0",
+    "codemirror": "^6.0.2",
+    "dayjs": "^1.11.13",
+    "electron": "^33.3.1",
+    "electron-builder": "^26.18.0",
+    "electron-vite": "^3.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5",
+    "zustand": "^4.5.5"
+  }
+}
